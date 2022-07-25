@@ -9,7 +9,7 @@ export default function Home({ blog, monthlyIndex }) {
     <div className={styles.archive}>
       <div>
         <h3>月別アーカイブ</h3>
-        <ul>
+        <ul key={monthlyIndex}>
           {Object.keys(monthlyIndex).map((index) => (
             <li>
               <Link href={`archive/${index}`}>
