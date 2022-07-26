@@ -13,6 +13,8 @@ export const formatDate = (date) => {
   return formattedDate;
 };
 
+//記事をグルーピングする処理（グループ化）
+//上記で作成したformatDateも登場する
 export const groupBy = function (contents) {
   return contents.reduce(function (group, x) {
     const yearMonthString = formatDate(new Date(x["publishedAt"]));

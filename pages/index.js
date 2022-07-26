@@ -11,6 +11,7 @@ export default function Home({ blog, monthlyIndex }) {
         <h3>月別アーカイブ</h3>
         <ul>
           {Object.keys(monthlyIndex).map((index) => (
+            //Missing "key" prop for element in iterator（キーが設定されてなくて怒られていた)
             <li key={blog.id}>
               <Link href={`archive/${index}`}>
                 {index.split("_")[0] + "年" + index.split("_")[1] + "月"}
@@ -21,18 +22,7 @@ export default function Home({ blog, monthlyIndex }) {
         </ul>
       </div>
     </div>
-    // <div className={styles.home}>
-    //   <h1>ブログ一覧</h1>
-    //   <ul>
-    //     {blog.map((blog) => (
-    //       <li key={blog.id}>
-    //         <Link href={`/blog/${blog.id}`}>
-    //           <a>{blog.title}</a>
-    //         </Link>
-    //       </li>
-    //     ))}
-    //   </ul>
-    // </div>
+
   );
 }
 
